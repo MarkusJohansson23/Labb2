@@ -8,7 +8,7 @@ namespace ClassLibrary
     public class Sphere : Shape3D
     {
         public override Vector3 Center { get; }
-        public override float Area { get; } // 4 * PI * r  * r
+        public override float Area { get; } 
         public override float Volume { get; }
 
         public float Radius { get; }

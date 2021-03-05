@@ -108,17 +108,19 @@ namespace ClassLibrary
         {
             var rand = new Random();
 
-            var summaHörnPunkter = center * 3f;
+            var sumOfCorners = center * 3f;
 
-            var hörnPunkt1 = new Vector2(x: rand.Next(0, 100), y: rand.Next(0, 100));
-            var hörnPunkt2 = new Vector2(x: rand.Next(0, 100), y: rand.Next(0, 100));
+            var corner1 = new Vector2(x: rand.Next(0, 100), y: rand.Next(0, 100));
+            var corner2 = new Vector2(x: rand.Next(0, 100), y: rand.Next(0, 100));
 
-            while (hörnPunkt1 == hörnPunkt2)
-                hörnPunkt2 = new Vector2(x: rand.Next(0, 100), y: rand.Next(0, 100));
+            while (corner1 == corner2)
+            {
+                corner2 = new Vector2(x: rand.Next(0, 100), y: rand.Next(0, 100));
+            }
 
-            Vector2 hörnPunkt3 = (summaHörnPunkter - hörnPunkt1 - hörnPunkt2);
+            Vector2 corner3 = (sumOfCorners - corner1 - corner2);
 
-            return new Triangle(hörnPunkt1, hörnPunkt2, hörnPunkt3);
+            return new Triangle(corner1, corner2, corner3);
         }
 
     }
